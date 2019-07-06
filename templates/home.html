@@ -1,0 +1,279 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Exodus</title>
+    <link rel="stylesheet" href="{% static 'css/skitter.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/font-awesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+<!-- Start Header -->
+<div class="header">
+    <div class="overlay">
+        <div class="navbar"> <!-- Start Nav Bar -->
+            <div class="contain">
+                <div class="logo">
+                    <a href="{% url 'Home' %}"><img src="{% static 'photos/others/logo-2-ed.png' %}" alt=""></a>
+                </div>
+                <div class="tabs">
+                    <ul>
+                        <li>
+                            <a href="{% url 'Home' %}">home</a>
+                        </li>
+                        <li>
+                            <a href="#">trips</a>
+                        </li>
+                        <li>
+                            <a href="#">votes</a>
+                        </li>
+                        <li>
+                            <a href="#">agencies</a>
+                        </li>
+                        <li class="user_name">
+                            <a href=""><img src="{% static 'photos/others/user-avatar.png' %}" alt=""></a>
+                        </li>
+                        <li class="sign_in">
+                            <a onclick="document.getElementById('login').style.display='block'">sign in</a>
+                        </li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div> <!-- End Nav Bar -->
+    </div>
+</div>
+<!-- End header -->
+
+<!-- Start Latest Votes -->
+<div class="latest-votes">
+    <div class="contain">
+        <div class="outer-head">
+            <h2><span>latest</span> votes</h2>
+            <a href="#" class="see-more">see more</a>
+        </div>
+        <div class="clear"></div>
+        {% if votes.count > 0 %}
+            {% for v in votes %}
+                <div class="main-vote">
+                    <div class="vote-img">
+                        <img src="{{ v.photo_url }}" alt="">
+                        <div class="overlay">
+                            <button class="learn-more" type="button" name="button">learn more</button>
+                        </div>
+                    </div>
+                    <div class="vote-info">
+                        <div class="inner-head">
+                            <h3>{{ v.name }}</h3>
+                            <h3>{{ v.agency.name }}</h3>
+                        </div>
+                        <div class="clear"></div>
+                        <p>{{ v.description }}</p>
+
+                        <form method="get" action="{% url 'Vote' %}">
+                            <label>
+                                <input type="text" name="vote" value="{{ v.vote_id }}" hidden>
+                            </label>
+                            <button type="submit" class="interested x" name="response" value="1"><i>{{ v.interest }}</i>
+                            </button>
+                            <button type="submit" class="notinterested y" name="response" value="0">
+                                <i>{{ v.not_interest }}</i></button>
+                        </form>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="main-vote">
+                <div class="vote-info">
+                    <div class="inner-head">
+                        <h3>No Votes Yet</h3>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+<!-- End Latest Votes -->
+
+<!-- Start Most Going Trips -->
+<div class="home-trips">
+    <div class="contain">
+        <div class="outer-head">
+            <h2><span>most going</span> trips</h2>
+            <a href="#" class="see-more">see more</a>
+        </div>
+        <div class="clear"></div>
+        <div class="cards">
+            {% for trip in most_going %}
+                <a href="#">
+                    <div class="trip-card">
+                        <div class="card-img">
+                            <img src="{{ trip.tripphotos_set.all.0.url }}" alt="">
+                            <div class="overlay">
+                                <span>{{ trip.date_from }}</span>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h2>{{ trip.name }}</h2>
+                            <div class="stats">
+                                <h4><i class="fas fa-plane"></i>{{ trip.going }}</h4>
+                                <h4><i class="fas fa-eye"></i>{{ trip.views }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- End Most Going Trips -->
+
+<!-- Start Most Followed Agencies -->
+<div class="most-followed">
+    <div class="contain">
+        <div class="outer-head">
+            <h2><span>most followed</span> agencies</h2>
+            <a href="#" class="see-more">see more</a>
+        </div>
+        <div class="agencies">
+            {% for agency in most_followed %}
+                <div class="agency-card">
+                    <a href="#">
+                        <img src="{{ agency.photo_url }}" alt="">
+                        <h3>{{ agency.name }}</h3>
+                    </a>
+                    {% for f in follow %}
+                        {% if f.agency == agency.agency_id %}
+                            {% if f.follow %}
+                                <form method="post" action="{% url 'unFollow' %}">
+                                    {% csrf_token %}
+                                    <div class="follow-btn">
+                                        <span>{{ agency.followed }}</span>
+                                        <button name="btnUn_follow" type="submit" value="{{ agency.agency_id }}">
+                                            Unfollow
+                                        </button>
+                                    </div>
+                                </form>
+                            {% else %}
+                                <form method="post" action="{% url 'follow' %}">
+                                    {% csrf_token %}
+                                    <div class="follow-btn">
+                                        <span>{{ agency.followed }}</span>
+                                        <button name="btnFollow" type="submit" value="{{ agency.agency_id }}">Follow
+                                        </button>
+                                    </div>
+                                </form>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- End Most Followed Agencies -->
+
+<!-- Start Recent Trips -->
+<div class="home-trips">
+    <div class="contain">
+        <div class="outer-head">
+            <h2><span>recent</span> trips</h2>
+            <a href="#" class="see-more">see more</a>
+        </div>
+        <div class="clear"></div>
+        <div class="cards">
+            {% for trip in most_recent %}
+                <a href="#">
+                    <div class="trip-card">
+                        <div class="card-img">
+                            <img src="{{ trip.tripphotos_set.all.0.url }}" alt="">
+                            <div class="overlay">
+                                <span>{{ trip.date_from }}</span>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h2>{{ trip.name }}</h2>
+                            <div class="stats">
+                                <h4><i class="fas fa-plane"></i>{{ trip.going }}</h4>
+                                <h4><i class="fas fa-eye"></i>{{ trip.views }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- End Recent Trips -->
+
+<!-- Start Footer -->
+<div class="footer">
+    <div class="contain">
+        <div class="links">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.yahoo.com" target="_blank"><i class="fab fa-yahoo"></i></a>
+            <div class="clear"></div>
+        </div>
+        <div class="copyright">
+            <h3>Copyright © 2019 <span>Exodus.com</span> , All Rights Reserved.</h3>
+        </div>
+        <div class="andro-app">
+            <div class="app">
+                <a href="#" target="_blank">
+                    <i class="fab fa-android"></i>
+                    <h3>download exodus app</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Footer -->
+
+<!-- Start Scroll To Top Button -->
+<div class="scroll-top">
+    <span>Top</span>
+    <i class="fas fa-arrow-up"></i>
+</div>
+<!-- End Scroll To Top Button -->
+
+<!-- Start Div Error -->
+<section>
+    <h1>unfortunatly!...</h1>
+    <p>this website dosen't support screen less than 400px</p>
+</section>
+<!-- End Div Error -->
+
+<script src="{% static 'js/JQuery(v3.2.1).js' %}"></script>
+<!-- <script src="js/bootstrap.min.js"></script> -->
+<script src="{% static 'js/script.js' %}"></script>
+
+
+<!-- Start Scroll To Top Button -->
+<div class="scroll-top">
+    <span>Top</span>
+    <i class="fas fa-arrow-up"></i>
+</div>
+<!-- End Scroll To Top Button -->
+
+<!-- Start Div Error -->
+<section>
+    <h1>unfortunatly!...</h1>
+    <p>this website dosen't support screen less than 400px</p>
+</section>
+<!-- End Div Error -->
+
+<script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+<script src="{% static 'js/JQuery(v3.2.1).js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,509 @@
+
+/* Start Login, Signup Forms */
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+  background-color: #0009;
+  z-index: 99;
+}
+.modal form{
+  width: 40%;
+  overflow: hidden;
+  background: linear-gradient(to bottom,  #4561ab 0%, #669999 100%);
+  margin: 50px auto;
+  padding: 15px 25px;
+  border-radius: 5px;
+  animation: animatezoom .5s linear;
+}
+.modal form .form-head{
+  position: relative;
+  overflow: hidden;
+}
+.modal form .form-head h2{
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #eee;
+  margin: 20px 0;
+  text-align: center;
+}
+.modal form .form-head i{
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  font-size: 25px;
+  transition: all .20s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  color: #eee;
+}
+.modal form .form-head i:hover{
+  color: #e00;
+}
+.modal form .form-mid{
+  overflow: hidden;
+}
+.modal form .form-mid label{
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  padding: 0 5px;
+  text-transform: capitalize;
+  color: #eee;
+  font-size: 19px;
+}
+.modal form .form-mid .switchbtns{
+  margin: 10px auto;
+  width: 60%;
+  overflow: hidden;
+}
+.modal form .form-mid .switchbtns input{
+  width: 50%;
+  float: left;
+  border: none;
+  padding: 5px;
+  border-radius: 10px 0 0 10px;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: 500;
+  transition: all .20s ease-in-out;
+}
+.modal form .form-mid .switchbtns input::after{
+  content: "user"
+}
+.modal form .form-mid .switchbtns input:last-of-type{
+  border-radius: 0 10px 10px 0;
+}
+.modal form .form-mid .switchbtns input.active{
+  background: var(--main-color);
+  color: #fff;
+}
+.modal form .form-mid input, textarea{
+  width: 100%;
+  display: block;
+  padding: 8px 5px;
+  margin: 15px 0;
+  color: #555;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.modal form .form-mid span{
+  margin: 15px 0;
+  text-transform: capitalize;
+  display: inline-block;
+  color: #222;
+}
+.modal form .form-mid span.terms{
+  width: 100%;
+  text-align: center;
+}
+.modal form .form-mid span.remember{
+  text-align: left;
+  width: 47.5%;
+  margin-left: 2%
+}
+.modal form .form-mid span.forgot{
+  text-align: right;
+  width: 47.5%;
+  margin-right: 2%;
+}
+.modal form .form-mid span input{
+  width: 18px;
+  height: 18px;
+  display: inline;
+  position: relative;
+  top: 3px;
+  margin: 0 5px 0 0;
+}
+.modal form .form-mid span a{
+  text-decoration: underline;
+  color: #222;
+}
+.modal form .form-foot{
+  overflow: hidden;
+}
+.modal form .form-foot button{
+  width: 60%;
+  display: block;
+  padding: 8px 0;
+  margin: 10px auto;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #eee;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .20s ease-in-out;
+}
+.modal form .form-foot button:hover{
+  background-color: #fff;
+  color: var(--main-color);
+}
+textarea{
+  height: 150px;
+}
+
+hr{
+  border: 0.5px solid black;
+}
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+/* End Login, Signup Forms */
+
+/* Start Header */
+.header{
+  background-image: url(../photos/header-2.jpg);
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+}
+.header .overlay{
+  background-color: #1d1d1dc7
+}
+
+.header .navbar{ /* Start Nav Bar */
+  overflow: hidden;
+  padding-top: 20px;
+}
+.header .navbar .contain > div{
+  float: left;
+  overflow: hidden;
+}
+.header .navbar .contain .logo{
+  width: 50%;
+  margin-top: 5px;
+}
+
+.header .navbar .contain .logo img{
+  height: 40px;
+}
+
+.header .navbar .contain .tabs{
+  width: 50%;
+}
+.header .navbar .contain .tabs ul li{
+  float: left;
+  margin: 4px 2px;
+  width: 19%;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+.header .navbar .contain .tabs ul .sign_in a{
+  background-color: var(--main-color);
+  color: #fff;
+  border: 2px solid #3898ec;
+}
+.header .navbar .contain .tabs ul .sign_in a:hover{
+  background-color: #fff;
+  color: #55afff;
+}
+.header .navbar .contain .tabs ul .user_name a{
+  padding: 0;
+}
+.header .navbar .contain .tabs ul .user_name a img{
+  width: 36px;
+}
+.header .navbar .contain .tabs ul .user_name a:hover{
+  background-color: transparent;
+}
+.header .navbar .contain .tabs ul li:hover a{
+  background-color: rgba(163, 163, 163, 0.28);
+  color: #55afff;
+}
+.header .navbar .contain .tabs ul li a{
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 10px 0;
+  width: 100%;
+  display: block;
+  transition: all 0.25s ease-in-out;
+}
+/* End Nav Bar */
+
+iframe{
+  width: 100%;
+  display: block;
+  border: none;
+  overflow: hidden;
+}
+
+/* Start Footer */
+.footer{
+  overflow: hidden;
+  background: #333;
+  border-top: 1px solid #bbb;
+  padding: 10px;
+  margin-top: 10px;
+}
+.footer .links{
+  float: left;
+  width: 15%;
+  text-align: left;
+  margin-top: 10px;
+}
+.footer .links a{
+  margin-right: 15px;
+  overflow: hidden;
+  display: inline-block;
+}
+.footer .links a:last-of-type{
+  margin-right: 0;
+}
+.footer .links a i{
+  width: 35px;
+  text-align: center;
+  color: #aaa;
+  font-size: 30px;
+  transition: all 0.25s ease-in-out;
+}
+.footer .links a .fa-facebook-f:hover{
+  color: #4267b2;
+}
+.footer .links a .fa-twitter:hover{
+  color: #1da1f3;
+}
+.footer .links a .fa-yahoo:hover{
+  color: #6001d2;
+}
+
+.footer .copyright{
+  float: left;
+  width: 61%;
+  text-align: center;
+  margin-top: 15px;
+}
+.footer .copyright h3{
+  color: #aaa;
+  font-weight: 600;
+}
+.footer .copyright h3 span{
+  color: var(--main-color);
+}
+
+.footer .andro-app{
+  float: left;
+  width: 24%;
+}
+.footer .andro-app .app{
+  margin: 0;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #a4c639;
+  overflow: hidden;
+  text-align: center;
+}
+.footer .andro-app .app a{
+  margin: 0;
+  overflow: hidden;
+  display: inline-block;
+}
+.footer .andro-app .app a i{
+  font-size: 50px;
+  float: left;
+  color: #a4c639;
+}
+.footer .andro-app .app a h3{
+  display: inline-block;
+  text-transform: capitalize;
+  margin-left: 8px;
+  float: right;
+  margin-top: 15px;
+  color: #aaa;
+}
+/* End Footer */
+
+/* Start Scroll To Top Button */
+.scroll-top{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #eee;
+  font-size: 20px;
+  cursor: pointer;
+}
+.scroll-top span{
+  opacity: 0;
+  float: left;
+  background-color: var(--main-color);
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 15px 0 0 15px;
+  left: 50%;
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+}
+.scroll-top i{
+  padding: 15px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  z-index: 2;
+}
+/* End Scroll To Top Button */
+
+/* ===== Large Laptop & Medium Desktop ===== */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .modal form {width: 50%}
+
+  .header .navbar .contain .logo img {height: 35px;}
+  .header .navbar .contain .tabs ul li {margin: 4px 4px;width: 17.8%;}
+  .header .navbar .contain .tabs ul li a {font-size: 15px;padding: 8px 0;}
+
+  .footer .links a {margin-right: 5px;}
+  .footer .links a i {font-size: 27px;}
+  .footer .copyright {width: 56%;}
+  .footer .copyright h3 {font-size: 18px;}
+  .footer .andro-app {width: 29%;}
+  .footer .andro-app .app a i {font-size: 45px;}
+  .footer .andro-app .app a h3 {margin-left: 5px;font-size: 18px;}
+
+  .scroll-top {font-size: 18px;}
+}
+/* ===== Small Labtop & Tablet Landscape ===== */
+@media (max-width: 900px) and (min-width: 601px) {
+  .modal form {width: 70%}
+
+  .header .navbar {padding-top: 0;}
+  .header .navbar .contain > div {float: none;margin: 15px auto;}
+  .header .navbar .contain .logo {width: 80%; text-align: center;}
+  .header .navbar .contain .logo img {height: 33px;}
+  .header .navbar .contain .tabs {width: 80%;margin: 0 auto;}
+  .header .navbar .contain .tabs ul li a {padding: 7px 0;}
+
+  .footer .links a {margin-right: 0;}
+  .footer .links a i {font-size: 25px;width: 30px;}
+  .footer .links {width: 22%;}
+  .footer .copyright {width: 78%;}
+  .footer .copyright h3 {font-size: 18px;}
+  .footer .andro-app {width: 50%;margin-top: 25px;}
+
+  .scroll-top {font-size: 16px;}
+  .scroll-top span {font-size: 16px;}
+}
+/* ===== Mobile Landscape & Tablet Portrait ===== */
+@media (max-width: 600px) and (min-width: 301px){
+  .modal form {width: 105%}
+
+  .header .navbar {padding-top: 0;}
+  .header .navbar .contain > div {float: none;margin: 10px auto;}
+  .header .navbar .contain .logo {width: 100%; text-align: center;}
+  .header .navbar .contain .logo img {height: 25px;}
+  .header .navbar .contain .tabs {width: 100%;margin: 0 auto;}
+  .header .navbar .contain .tabs ul li {margin: 0 2px;width: 18.6%;}
+  .header .navbar .contain .tabs ul li a {font-size: 12px;padding: 5px 0;}
+  .header .navbar .contain .tabs ul .user_name a img {width: 30px;}
+
+  .footer .links {width: 35%;}
+  .footer .links a {margin-right: 0;}
+  .footer .links a i {font-size: 25px;width: 25px;}
+  .footer .copyright {width: 60%;margin-top: 5px;}
+  .footer .copyright h3 {font-size: 18px;}
+  .footer .andro-app {width: 95%;margin-top: 15px;}
+  .footer .andro-app .app {width: 85%;margin: 0 auto;}
+  .footer .andro-app .app a i {font-size: 42px}
+  .footer .andro-app .app a h3 {font-size: 17px;margin-top: 12px;}
+
+  .scroll-top {font-size: 15px;padding: 13px;right: 10px}
+  .scroll-top span {font-size: 15px;margin-top: 8px}
+}
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+/* Generals */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{ /* Variables */
+  --main-color: #3898ec;
+  --hover-color: #1869b1;
+  font-family: 'Exo 2', Arial, Tahoma;
+}
+
+.contain{margin: 0 auto;width: 1100px;}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #1d1d1d80;
+}
+
+.clear{clear: both;}
+
+input, select, button, textarea:focus{outline: none;}
+
+input, select, textarea{border: 2px solid transparent;}
+
+textarea:focus,
+input:focus,
+select:focus{border-color: var(--main-color);box-shadow: none;}
+
+a{text-decoration: none;color: transparent;}
+
+ul{list-style: none;overflow: hidden;}
+
+section{
+  display: none;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin: 50px auto;
+  width: 90%;
+  text-align: center;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ===== Large Desktop ===== */
+@media (min-width: 1200px) {
+  .contain {width: 1100px;margin: auto;}
+}
+/* ===== Large Laptop & Medium Desktop ===== */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .contain {width: 85%;margin: auto;}
+}
+/* ===== Small Labtop & Tablet Landscape ===== */
+@media (max-width: 900px) and (min-width: 601px) {
+  .contain {width: 90%;margin: auto;}
+}
+/* ===== Mobile Landscape & Tablet Portrait ===== */
+@media (max-width: 600px) and (min-width: 351px){
+  .contain {width: 95%;margin: auto;}
+}
+/* ===== Mobile Portriat ===== */
+@media (max-width: 350px) {
+  div {display: none;}
+  section {display: block;}
+}

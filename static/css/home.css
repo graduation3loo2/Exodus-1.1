@@ -1,0 +1,413 @@
+
+/* Start Section Headers */
+.outer-head{
+  overflow: hidden;
+  margin-bottom: 20px
+}
+.outer-head h2{
+  text-transform: capitalize;
+  display: inline-block;
+  float: left;
+  text-transform: capitalize;
+  display: inline-block;
+  float: left;
+  color: #333;
+  padding: 5px 1px;
+}
+.outer-head h2 span{
+  color: var(--main-color);
+}
+.outer-head .see-more:hover{
+  background: #1869b1;
+}
+.outer-head .see-more{
+  float: right;
+  padding: 8px 15px;
+  text-transform: capitalize;
+  font-size: 17px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+/* Start Section Headers */
+
+/* Start Latest Votes */
+.latest-votes{
+  background-color: #eee;
+  padding: 50px 0;
+  overflow: hidden;
+  border-bottom: 1px solid #bbb;
+}
+.latest-votes .main-vote{
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px 1px #888;
+}
+.latest-votes .main-vote .vote-img{
+  width: 30%;
+  height: 230px;
+  float: left;
+  display: inline-block;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.latest-votes .main-vote .vote-img img{
+  width: 100%;
+  height: 100%;
+}
+.latest-votes .main-vote .vote-img .overlay{
+  display: none;
+  transition: all 0.25s ease-in-out;
+}
+.latest-votes .main-vote .vote-img .overlay .learn-more:hover{
+  background: #1869b1;
+}
+.latest-votes .main-vote .vote-img .overlay .learn-more{
+  float: left;
+  width: 40%;
+  position: relative;
+  top: 100px;
+  left: 100px;
+  padding: 10px 15px;
+  text-transform: capitalize;
+  font-size: 17px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #eee;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+.latest-votes .main-vote:hover .overlay{
+    display: inline-block;
+}
+.latest-votes .main-vote .vote-info{
+  display: inline-block;
+  float: left;
+  width: 70%;
+}
+.latest-votes .main-vote .vote-info .inner-head{
+  overflow: hidden;
+  margin: 20px;
+}
+.latest-votes .main-vote .vote-info .inner-head h3{
+  float: left;
+  text-transform: capitalize;
+  border-bottom: 2px solid #333;
+  padding: 5px 1px;
+  color: #333;
+}
+.latest-votes .main-vote .vote-info .inner-head h3:nth-of-type(2){
+  float: right;
+}
+.latest-votes .main-vote .vote-info p{
+  margin: 0 20px;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.5;
+}
+.latest-votes .main-vote .vote-info button{
+  text-transform: capitalize;
+  color: #eee;
+  float: left;
+  font-size: 17px;
+  font-weight: 500;
+  display: inline-block;
+  width: 30%;
+  margin: 20px 10%;
+  padding: 10px 10px;
+  background: #09ad09;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all .20s ease-in-out;
+}
+.latest-votes .main-vote .vote-info button:hover{
+  background-color: #017e01;
+}
+.latest-votes .main-vote .vote-info button:nth-of-type(2){
+  background: #d00303;
+}
+.latest-votes .main-vote .vote-info button:nth-of-type(2):hover{
+  background: #a30000;
+}
+.latest-votes .main-vote .vote-info button.voted{
+  background-color: #bbb;
+}
+.latest-votes .main-vote .vote-info button.voted:hover{
+  background-color: #bbb;
+}
+.latest-votes .main-vote .vote-info button i{
+  margin: 0 10px;
+  font-size: 18px;
+}
+/* End Latest Votes */
+
+/* Start Most Booking And Recent Trips */
+.home-trips{
+  padding: 50px 0;
+  overflow: hidden;
+}
+.home-trips .cards a{
+  float: left;
+  width: 23.9%;
+  overflow: hidden;
+  margin-right: 11px;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px -3px #333;
+  transition: all 0.25s ease-in-out;
+}
+.home-trips .cards a:last-of-type{
+  margin-right: 0;
+}
+.home-trips .cards .trip-card .card-img{
+  width: 100%;
+  height: 165px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all .20s ease-in-out;
+}
+.home-trips .cards .trip-card .card-img:hover .overlay{
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+.home-trips .cards .trip-card .card-img:hover .overlay span{
+  line-height: 8;
+  font-size: 22px
+}
+.home-trips .cards .trip-card .card-img img{
+  width: 100%;
+  height: 100%;
+}
+.home-trips .cards .trip-card .card-img .overlay{
+  padding: 2px 10px;
+  bottom: auto;
+  right: auto;
+  background-color: #3898ecbb;
+}
+.home-trips .cards .trip-card .card-img .overlay span{
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+}
+.home-trips .cards .trip-card .card-info{
+  text-align: center;
+  overflow: hidden;
+  background: #eee;
+  color: #555;
+}
+.home-trips .cards .trip-card .card-info h2{
+  text-transform: capitalize;
+  font-weight: 600;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: all .20s ease-in-out;
+}
+.home-trips .cards .trip-card .card-info h2:hover{
+  background-color: #ccc;
+  color: var(--main-color);
+}
+.home-trips .cards .trip-card .card-info .stats{
+  border-top: 2px solid var(--main-color);
+  overflow: hidden;
+}
+.home-trips .cards .trip-card .card-info .stats h4{
+  float: left;
+  width: 50%;
+  font-size: 18px;
+  padding: 5px 0;
+  font-weight: 500;
+  transition: all .20s ease-in-out;
+}
+.home-trips .cards .trip-card .card-info .stats h4 i{
+  margin-right: 10px;
+}
+.home-trips .cards .trip-card .card-info .stats h4:hover{
+  background-color: #ccc;
+  color: var(--main-color);
+}
+/* End Most Booking Trips */
+
+/* Start Most Followed Agencies */
+.most-followed{
+  padding: 20px 0;
+  overflow: hidden;
+  background-color: #eee;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+.most-followed .agencies .agency-card{
+  float: left;
+  width: 25%;
+  padding: 10px 25px;
+  text-align: center;
+  transition: all 0.25s ease-in-out;
+}
+.most-followed .agencies .agency-card:hover{
+  background: #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 0 #aaa;
+}
+.most-followed .agencies .agency-card img{
+  border-radius: 50%;
+  width: 100%;
+  height: 200px;
+  box-shadow: 0px 0px 10px 0px #bbb;
+  margin-bottom: 15px;
+  cursor: pointer;
+  opacity: .6;
+  transition: all 0.25s ease-in-out;
+}
+.most-followed .agencies .agency-card:hover img{
+  box-shadow: 0px 0px 10px 0px #888;
+  opacity: 1;
+}
+.most-followed .agencies .agency-card h3{
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+.agencies .agency-card .follow-btn:hover{
+  background: #1869b1;
+  box-shadow: 0px 0px 10px 1px #888;
+}
+.agencies .agency-card .follow-btn{
+  background: var(--main-color);
+  border-radius: 5px;
+  padding: 5px;
+  display: inline-block;
+  transition: all 0.25s ease-in-out;
+}
+.agencies .agency-card .follow-btn span{
+  font-weight: 600;
+  color: #eee;
+  font-size: 16px;
+  border-right: 1px solid #eee;
+  padding: 0 8px 0 4px;
+}
+.agencies .agency-card .follow-btn button{
+  font-weight: 600;
+  background: transparent;
+  color: #eee;
+  border: none;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+/* End Most Followed Agencies */
+
+/* ===== Large Laptop & Medium Desktop ===== */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .outer-head .see-more {padding: 6px 10px;}
+
+  .latest-votes{padding: 10px 20px;}
+  .latest-votes .main-vote .vote-img{width: 40%;}
+  .latest-votes .main-vote .vote-info{width: 60%;}
+  .latest-votes .main-vote .vote-info .inner-head{margin: 10px 20px;}
+  .latest-votes .main-vote .vote-info .inner-head h3{font-size: 18px;}
+  .latest-votes .main-vote .vote-info p{font-size: 15px;}
+  .latest-votes .main-vote .vote-info button{
+    width: 35%;
+    font-size: 15px;
+    margin: 20px 7.5%;
+    padding: 6px;
+  }
+
+  .home-trips .cards .trip-card .card-img{height: 130px;}
+  .home-trips .cards .trip-card .card-img .overlay span{font-size: 14px;}
+  .home-trips .cards .trip-card .card-img:hover .overlay span{line-height: 6;font-size: 20px;}
+  .home-trips .cards .trip-card .card-info h2{font-size: 20px;padding: 3px 0;}
+  .home-trips .cards .trip-card .card-info .stats h4{font-size: 16px;}
+
+  .most-followed .agencies .agency-card{padding: 10px 15px;}
+  .most-followed .agencies .agency-card img{height: 170px;}
+  .most-followed .agencies .agency-card h3{font-size: 18px;}
+}
+/* ===== Small Labtop & Tablet Landscape ===== */
+@media (max-width: 900px) and (min-width: 601px) {
+  .outer-head .see-more {padding: 6px 10px;}
+  .outer-head h2{font-size: 22px}
+
+  .latest-votes{padding: 10px 20px;}
+  .latest-votes .main-vote .vote-img,
+  .latest-votes .main-vote .vote-info{
+    float: none;
+    display: block;
+    border-radius: 0;
+    width: 100%;
+  }
+  .latest-votes .main-vote .vote-img{
+    height: 225px !important;
+  }
+  .latest-votes .main-vote .vote-info .inner-head{margin: 10px 20px;}
+  .latest-votes .main-vote .vote-info .inner-head h3{font-size: 18px;}
+  .latest-votes .main-vote .vote-info p{font-size: 15px;}
+  .latest-votes .main-vote .vote-info button{
+    width: 35%;
+    font-size: 15px;
+    margin: 20px 7.5%;
+    padding: 7px 10px;
+  }
+
+  .home-trips .cards a{margin: 10px 11px 0 0;width: 49%}
+  .home-trips .cards a:nth-of-type(2){margin-right: 0;}
+
+  .most-followed .agencies .agency-card{margin-top: 10px;width: 50%}
+}
+/* ===== Mobile Landscape & Tablet Portrait ===== */
+@media (max-width: 600px) and (min-width: 351px){
+  .outer-head {margin-bottom: 10px;}
+  .outer-head .see-more {padding: 5px 10px;font-size: 12px}
+  .outer-head h2{font-size: 18px;}
+
+  .latest-votes{padding: 10px 20px;}
+  .latest-votes .main-vote .vote-img,
+  .latest-votes .main-vote .vote-info{
+    float: none;
+    display: block;
+    border-radius: 0;
+    width: 100%;
+  }
+  .latest-votes .main-vote .vote-img{
+    height: 175px !important;
+  }
+  .latest-votes .main-vote .vote-info .inner-head{margin: 10px 20px;}
+  .latest-votes .main-vote .vote-info .inner-head h3{font-size: 15px;}
+  .latest-votes .main-vote .vote-info p{font-size: 13px;}
+  .latest-votes .main-vote .vote-info button{
+    width: 80%;
+    display: block;
+    float: none;
+    font-size: 13px;
+    margin: 20px auto;
+    padding: 7px 10px;
+  }
+
+  .home-trips .cards a{margin: 10px 2% 0 0;width: 49%}
+  .home-trips .cards a:nth-of-type(2){margin-right: 0;}
+  .home-trips .cards .trip-card .card-img{height: 125px;}
+  .home-trips .cards .trip-card .card-img .overlay span{font-size: 14px;}
+  .home-trips .cards .trip-card .card-img:hover .overlay span{line-height: 6;font-size: 20px;}
+  .home-trips .cards .trip-card .card-info h2{font-size: 16px;padding: 3px 0;}
+  .home-trips .cards .trip-card .card-info .stats h4{font-size: 15px;}
+
+  .most-followed .agencies .agency-card{margin-top: 10px;width: 50%}
+  .most-followed .agencies .agency-card img{height: 135px;}
+  .most-followed .agencies .agency-card h3{font-size: 15px;}
+  .most-followed .agencies .agency-card button,
+  .most-followed .agencies .agency-card span{font-size: 13px;}
+}
